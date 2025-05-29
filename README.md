@@ -35,6 +35,7 @@ You must provide at least one of the following fields:
   "phoneNumber": "string | null",
   "email": "string | null"
 }
+```
 
 ## Cases & Logic
 
@@ -43,7 +44,7 @@ You must provide at least one of the following fields:
 - **Condition:** Neither the phone number nor the email exists in the database.
 - **Action:** Create a new primary contact with the provided details.
 - **Link Precedence:** Primary
-- **Response:** Returns the newly created contact's details.
+- **Response:** Returns the details of the newly created contact.
 
 ---
 
@@ -76,11 +77,37 @@ You must provide at least one of the following fields:
 
 ### Case 3: Either Mobile or Email is Unique
 
-- **Condition:** Only one of the phone numbers or email exists in the database.
+- **Condition:** Only one of the phone numbers or email addresses exists in the database.
 - **Action:**
   - Retrieve the existing contact.
   - Create a new secondary contact with the new detail (phone/email), linking it to the primary contact.
 - **Link Precedence:** Secondary
 - **Response:** Details of the primary contact.
+
+## Example
+
+### Request
+
+```json
+{
+  "phoneNumber": "1234567890",
+  "email": "user@example.com"
+}
+```
+
+### Response
+
+```json
+{
+  "id": "primary-contact-id",
+  "phoneNumber": "1234567890",
+  "email": "user@example.com",
+  "linkedId": null,
+  "linkPrecedence": "primary",
+  "createdAt": "2023-05-30T12:34:56.789Z",
+  "updatedAt": "2023-05-30T12:34:56.789Z"
+}
+```
+
 
 ---
