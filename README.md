@@ -3,6 +3,7 @@
 ## Table of Contents
 
 - [Overview](#overview)
+- [Request format](#request-format)
 - [Cases & Logic](#cases--logic)
   - [Case 1: Both Mobile and Email are Unique](#case-1-both-mobile-and-email-are-unique)
   - [Case 2: Both Mobile and Email Exist](#case-2-both-mobile-and-email-exist)
@@ -14,15 +15,15 @@
 - [Response Format](#response-format)
 - [Error Handling](#error-handling)
 - [Example Request & Response](#example-request--response)
-- [Changelog](#changelog)
 
+## Overview
 ---
 
 This project solves the problem of reconciling user identities based on shared contact information (email and/or phone number). It is designed for FluxKart via Bitespeed to unify customer profiles and provide a consistent, personalized experience.
 
 ---
 
-## API Overview
+
 
 
 
